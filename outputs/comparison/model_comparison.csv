@@ -1,0 +1,20 @@
+model,group,params,MAE,MedAE,MAPE%,MedAPE%,WAPE%,RMSE,cMAE,cMAPE%,cMedAPE%,within2%,within5%,within10%,c_within2%,c_within5%,c_within10%
+"FINAL (RE a=10, 31 leaves, 200 trees)",final,"re_alpha=10, num_leaves=31, n_estimators=200",100.624,31.648,4.28,1.707,4.174,629.291,46.623,1.984,1.683,58.099,93.94,98.445,58.914,95.254,99.821
+Hybrid-RE leaves=15,num_leaves,"re_alpha=10, num_leaves=15, n_estimators=500",101.199,31.525,4.287,1.705,4.198,629.303,47.21,1.991,1.679,58.103,93.668,98.405,58.918,94.978,99.781
+Hybrid-RE leaves=7,num_leaves,"re_alpha=10, num_leaves=7, n_estimators=500",101.17,31.602,4.29,1.718,4.197,629.345,47.178,1.993,1.692,57.649,93.813,98.449,58.457,95.125,99.826
+Hybrid-RE default (500 trees),default,"re_alpha=10, num_leaves=31, n_estimators=500",101.431,31.208,4.292,1.691,4.209,629.224,47.455,1.997,1.669,58.42,93.345,98.359,59.239,94.651,99.734
+Hybrid-RE leaves=63,num_leaves,"re_alpha=10, num_leaves=63, n_estimators=500",101.856,31.214,4.301,1.691,4.227,629.271,47.892,2.007,1.666,58.802,92.979,98.29,59.627,94.28,99.664
+Hybrid-RE alpha=3,RE alpha,"re_alpha=3, num_leaves=31, n_estimators=500",101.665,31.806,4.307,1.72,4.218,629.343,47.687,2.012,1.692,57.841,93.474,98.361,58.652,94.782,99.737
+Hybrid-RE alpha=30,RE alpha,"re_alpha=30, num_leaves=31, n_estimators=500",102.149,31.151,4.309,1.69,4.239,629.363,48.183,2.015,1.665,58.592,92.918,98.302,59.413,94.218,99.677
+Hybrid-RE trees=1000,n_estimators,"re_alpha=10, num_leaves=31, n_estimators=1000",102.438,31.076,4.317,1.681,4.252,629.313,48.49,2.024,1.656,59.0,92.493,98.21,59.826,93.786,99.584
+Hybrid-RE alpha=1,RE alpha,"re_alpha=1, num_leaves=31, n_estimators=500",101.989,32.136,4.322,1.726,4.231,629.372,48.018,2.027,1.7,57.283,93.407,98.376,58.087,94.714,99.752
+Hybrid-RE alpha=100,RE alpha,"re_alpha=100, num_leaves=31, n_estimators=500",103.108,31.229,4.326,1.68,4.279,629.514,49.16,2.033,1.656,58.92,92.363,98.242,59.745,93.655,99.616
+Hybrid: linear+LGBM (no lane RE),hybrid,no random effects,103.679,31.384,4.356,1.689,4.303,629.718,49.749,2.065,1.662,58.478,91.942,98.15,59.297,93.228,99.523
+LightGBM + day_index,lgbm,trees given day_index,107.306,32.867,4.573,1.679,4.455,633.862,53.384,2.329,1.651,58.36,88.438,96.385,59.173,89.675,97.733
+LightGBM loss=Huber,lgbm loss,"objective=huber, no trend",110.447,35.197,4.706,1.801,4.587,634.901,56.565,2.475,1.768,55.31,86.996,96.19,56.077,88.211,97.535
+LightGBM loss=L2 (MSE),lgbm loss,"objective=regression, no trend",110.193,36.583,4.708,1.878,4.575,634.596,56.316,2.48,1.849,53.454,87.273,96.52,54.195,88.491,97.87
+LightGBM loss=L1 (MAE),lgbm loss,"objective=l1, no trend",112.768,35.611,4.761,1.921,4.682,635.957,58.885,2.527,1.891,52.704,85.719,96.918,53.435,86.916,98.274
+Final WITHOUT spike removal,ablation,labels not cleaned,118.725,39.638,5.069,2.096,4.924,634.848,64.917,2.779,2.065,48.31,85.2,95.629,48.989,86.392,96.966
+Huber linear + trend,linear,Huber loss + day_index,119.101,46.379,5.198,2.455,4.942,634.585,65.225,2.913,2.418,42.0,81.703,97.546,42.588,82.847,98.911
+Huber linear (no trend),linear,"Huber loss, no time trend",135.534,62.358,5.787,3.279,5.629,642.82,81.81,3.585,3.234,32.389,72.602,96.559,32.835,73.609,97.908
+Baseline: median $/mile,benchmark,equipment x distance bucket,157.374,77.62,6.749,4.132,6.51,649.047,103.864,4.537,4.069,26.578,60.284,91.432,26.954,61.135,92.714

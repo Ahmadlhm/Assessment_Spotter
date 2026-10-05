@@ -1,0 +1,8 @@
+model,2025-05..2025-06,2025-06..2025-07,2025-07..2025-08,2025-08..2025-09,2025-09..2025-10
+FINAL hybrid: robust-linear(trend)+lane RE+LightGBM,1.7,2.11,2.49,2.07,1.56
+hybrid: linear(trend)+lgbm,1.59,1.93,2.77,2.46,1.57
+lgbm + day_index,1.67,1.85,3.31,2.8,2.01
+lgbm (no trend),1.71,1.87,3.24,3.14,2.41
+huber_linear + trend,2.72,2.89,3.39,2.96,2.6
+huber_linear (no trend),2.81,2.98,3.24,4.17,4.73
+baseline_median_rpm,6.13,5.34,3.82,3.68,3.72

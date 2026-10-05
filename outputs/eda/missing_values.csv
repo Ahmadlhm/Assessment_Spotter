@@ -1,0 +1,3 @@
+,train_missing,train_%,val_missing,val_%
+weight,300,0.62,165,1.38
+market_index,374,0.78,249,2.08

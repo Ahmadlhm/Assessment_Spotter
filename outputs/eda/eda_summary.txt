@@ -1,0 +1,43 @@
+train rows=48,000 (2025-01-01 .. 2025-10-31)
+
+validation rows=12,000 (2025-11-01 .. 2025-12-31)  -> hidden set is AFTER training period
+
+duplicate load_id train=0 val=0
+
+missing values:
+              train_missing  train_%  val_missing  val_%
+weight                  300     0.62          165   1.38
+market_index            374     0.78          249   2.08
+
+negative weight: train=292 val=145 (abs distribution matches positives -> sign flip)
+
+weight == +-47,500 (cap): 1204 rows
+
+cities in validation never seen in train: ['Allentown', 'Charlotte', 'Chicago', 'Jackson', 'Knoxville', 'Laredo', 'Norfolk', 'San Diego']
+
+label spikes |log-resid|>0.5: up=340 (x3.39) down=337 (x0.28) = 1.41% of rows
+
+distance / haversine median=1.182 (distance is clean; short hauls naturally have larger ratio)
+
+correlations:
+              posted_rate  distance  weight  market_index  quote_signal    rpm
+posted_rate         1.000     0.909   0.035         0.034        -0.040  0.003
+distance            0.909     1.000   0.003        -0.002        -0.057 -0.335
+weight              0.035     0.003   1.000        -0.001         0.008  0.075
+market_index        0.034    -0.002  -0.001         1.000        -0.068  0.083
+quote_signal       -0.040    -0.057   0.008        -0.068         1.000  0.049
+rpm                 0.003    -0.335   0.075         0.083         0.049  1.000
+
+monthly stats:
+         rows  median_rate  median_rpm  market_index  quote_signal
+month                                                             
+2025-01  4918     1915.200       2.029         0.927         2.068
+2025-02  4337     1994.250       2.061         0.996         2.097
+2025-03  5036     2022.920       2.139         1.073         2.180
+2025-04  4819     2044.240       2.147         1.208         1.963
+2025-05  4913     2065.510       2.190         1.301         1.913
+2025-06  4783     2120.220       2.248         1.280         2.296
+2025-07  4912     2059.145       2.187         1.201         1.923
+2025-08  4759     2015.730       2.121         0.981         2.052
+2025-09  4670     2057.130       2.160         0.893         2.200
+2025-10  4853     2035.900       2.164         0.958         1.943
