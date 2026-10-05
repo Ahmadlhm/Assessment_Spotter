@@ -1,13 +1,3 @@
-"""Cleaning + feature engineering for the freight-rate challenge.
-
-Design notes (see README / report for the evidence behind each choice):
-  * weight < 0 is a sign-flip error  -> abs(); weight is also clipped at 47,500.
-  * weight / market_index have ~0.7% NaNs -> kept as NaN for trees, flagged, imputed for linear models.
-  * market_index is a *daily* market level plus row-level noise (within-day std 0.025 vs
-    across-day std 0.167), so we build date-level aggregates from FEATURES ONLY (no labels).
-  * Month / day-of-year are NOT used: training has no Nov/Dec, so seasonality for the
-    evaluation window cannot be learned from them.
-"""
 from __future__ import annotations
 
 import numpy as np

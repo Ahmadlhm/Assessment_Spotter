@@ -1,7 +1,3 @@
-"""Exploratory data analysis -> outputs/eda/ (tables + figures used in the report / Loom).
-
-    python src/eda.py
-"""
 from __future__ import annotations
 
 from pathlib import Path

@@ -1,12 +1,3 @@
-"""Train the final model on ALL labeled data and write the two submission files.
-
-    python src/train_predict.py
-
-Outputs
-  validation_predictions.csv          load_id,predicted_rate   (12,000 rows, template order)
-  data/december_chart_inputs.csv      same file with predicted_rate filled (31 rows)
-  models/final_model.joblib           fitted pipeline
-"""
 from __future__ import annotations
 
 from pathlib import Path

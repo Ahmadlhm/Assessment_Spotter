@@ -1,15 +1,3 @@
-"""Walk-forward (expanding-window) validation.
-
-The hidden evaluation set is Nov-Dec 2025 -- strictly AFTER all labeled data (Jan-Oct).
-A random K-fold would leak the market regime of neighbouring days and be over-optimistic,
-so every fold trains on the past only and tests on the next 2 months, mimicking the real task.
-
-Folds (train -> test):
-  Jan-Apr -> May-Jun | Jan-May -> Jun-Jul | Jan-Jun -> Jul-Aug | Jan-Jul -> Aug-Sep | Jan-Aug -> Sep-Oct
-
-Metrics are reported on ALL rows and on "clean" rows (label not a spike). ~1.4% of labels are random
-x3.4 / x0.28 spikes that no model can predict; they dominate RMSE but say nothing about model quality.
-"""
 from __future__ import annotations
 
 import warnings

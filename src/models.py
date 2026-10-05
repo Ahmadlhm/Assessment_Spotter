@@ -1,11 +1,3 @@
-"""Model zoo used for validation and for the final submission.
-
-RPMBaseline  - median $/mile by equipment x distance bucket (benchmark)
-HuberLinear  - robust linear model on log(rate)
-LGBM         - LightGBM on log(rate), Huber loss
-Hybrid       - HuberLinear (incl. time trend) + LightGBM on residual
-HybridRE     - HuberLinear + ridge random-effects (pickup/delivery/lane/pair) + LightGBM   <-- final model
-"""
 from __future__ import annotations
 
 import warnings

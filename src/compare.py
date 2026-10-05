@@ -1,13 +1,3 @@
-"""Model + hyper-parameter comparison, evaluation plots and tables  ->  outputs/comparison/
-
-    python src/compare.py
-
-Evaluation uses:
-  error metrics     -> MAE, MedAE, MAPE, MedAPE, WAPE, RMSE (all rows and "clean" rows without label spikes)
-  hit rate          -> share of predictions within +-2% / +-5% / +-10% of the true rate
-  loss curves       -> Huber loss / MAE (log scale) per boosting iteration, train vs validation
-  residual analysis -> predicted vs actual, % error distribution, bias over time
-"""
 from __future__ import annotations
 
 import copy
